@@ -26,7 +26,9 @@ The first time you open the game it asks for your name or nickname. Your times, 
 
 ## Online features
 
-These need the game to run as a published Claude artifact, which gives the page shared storage, players' identities and live rooms. Opened as a file or from GitHub Pages, the game is single-player: these parts stay hidden and everything else works.
+The online parts need somewhere to keep shared data and to connect players. This version uses [Firebase](https://firebase.google.com) (free plan): Cloud Firestore keeps the shared tracks, times, ghosts and names, the Realtime Database runs the live race rooms, and anonymous sign-in gives each browser its own player id. Until you add your Firebase settings to `online-config.js` (see [Turning on the online features](#turning-on-the-online-features)), the game is single-player: these parts stay hidden and everything else works.
+
+The game was written to run as a Claude artifact too, where the artifact runtime provides the same things; `online.js` provides them from Firebase instead, so `index.html` is the same game either way.
 
 - **Your name** is what other players see on leaderboards, community tracks, ghosts, live races and chat. Change it any time with Change on the menu or in Settings.
 - **Community tracks**: press Publish on a track under Yours and everyone who plays the game sees it in the Community tab, with its maker's name. They can race it or copy it into their own editor. You can update or unpublish your own tracks, and the game's owner can remove any track.
@@ -34,7 +36,25 @@ These need the game to run as a published Claude artifact, which gives the page 
 - **Ghosts of the top times**: a time that makes a track's top ten is posted with its ghost. On a leaderboard (or the finish screen), switch on Ghost next to other players' times to race against them, up to five at once.
 - **Live races**: press Race online to host a race or join one from the list of open races. The host picks the track and presses Start, everyone gets the same 3-2-1 countdown, and other racers show as see-through cars with their names. The HUD shows live positions and the finish screen the results; places go by time, and each player's clock runs from their own "Go". The race room has a chat.
 
-Publishing tracks and posting times need Contributor access or higher to the artifact; view-only players can still race, see the boards, and join live races and chat.
+Anyone who opens the page can publish tracks, post times and race. Each player can only change their own data; the game's owner (you, once your player id is in the settings) can remove anyone's tracks and times.
+
+## Turning on the online features
+
+You need a Google account. It takes about ten minutes and the free plan is enough.
+
+1. **Create a project.** Go to the [Firebase console](https://console.firebase.google.com), choose **Create a project**, and give it a name such as `mushtaqtrack`. Google Analytics isn't needed.
+2. **Add a web app.** On the project's overview page, click the web icon (`</>`), give the app a nickname, and click **Register app**. Keep the `firebaseConfig` settings it shows; you'll paste them in step 6.
+3. **Turn on anonymous sign-in.** Open **Build → Authentication**, click **Get started**, then under **Sign-in method** choose **Anonymous**, switch it on and save.
+4. **Create the Firestore database.** Open **Build → Firestore Database → Create database**, pick a location near your players, and start in **production mode**. On its **Rules** tab, replace everything with the contents of [`firestore.rules`](firestore.rules) and click **Publish**.
+5. **Create the Realtime Database.** Open **Build → Realtime Database → Create database**, pick a location, and start in **locked mode**. On its **Rules** tab, replace everything with the contents of [`database.rules.json`](database.rules.json) and click **Publish**. Copy the database's address from the top of its **Data** tab (it looks like `https://your-project-default-rtdb.firebaseio.com`, or ends in `firebasedatabase.app` outside the US).
+6. **Add the settings to the game.** Edit [`online-config.js`](online-config.js) on GitHub (the pencil icon), replace `window.MUSHTAQ_ONLINE = null;` with the filled-in version shown in that file, paste in your `firebaseConfig` values, and make sure `databaseURL` is the address from step 5. Commit the change.
+7. **Make yourself the owner.** Open the game (from GitHub Pages), pick your name, then in the Firebase console go to **Authentication → Users** and copy the **User UID** of the player that was just created. Put it in `online-config.js` as `ownerUid`, and in the Firestore rules (step 4) in place of `PASTE_YOUR_PLAYER_ID_HERE`, then publish the rules again. Your player id belongs to that browser, so do this in the browser you'll use to look after the game.
+
+Each browser gets its own player id the first time it opens the game, and keeps it. Clearing the browser's site data starts a new player.
+
+The free plan comfortably covers a group of friends. Shared lists are read in full when the game opens, so a very busy game (thousands of visits a day) could reach the free plan's daily read limit, and then the shared lists stop loading until the next day.
+
+To try the online features on your own computer without a Firebase project, run `firebase emulators:start --project demo-mushtaqtrack` here (with the [Firebase CLI](https://firebase.google.com/docs/cli)), serve this folder with any local web server, and add `emulators: true` to the settings in `online-config.js`.
 
 ## Controls
 

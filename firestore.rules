@@ -1,0 +1,36 @@
+rules_version = '2';
+
+// Cloud Firestore rules for MushtaqTrack's shared data. Everyone who has the
+// game open can read it; each player writes only their own documents; the
+// game's owner can change anyone's (to remove a track or a time).
+//
+// Put your player id in isOwner() below, in place of the placeholder (see
+// README.md), then publish these rules in the Firebase console (Firestore
+// Database > Rules).
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function isOwner() { return signedIn() && request.auth.uid == 'PASTE_YOUR_PLAYER_ID_HERE'; }
+    function mine(uid) { return signedIn() && (request.auth.uid == uid || isOwner()); }
+
+    // Each player's published tracks.
+    match /community/{uid} {
+      allow read: if signedIn();
+      allow write: if mine(uid);
+    }
+    // Each player's best times, and the ghosts of their top-ten runs.
+    match /times/{uid} {
+      allow read: if signedIn();
+      allow write: if mine(uid);
+      match /ghosts/{board} {
+        allow read: if signedIn();
+        allow write: if mine(uid);
+      }
+    }
+    // Each player's chosen name.
+    match /players/{uid} {
+      allow read: if signedIn();
+      allow write: if mine(uid);
+    }
+  }
+}

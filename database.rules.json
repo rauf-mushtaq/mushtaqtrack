@@ -1,0 +1,13 @@
+{
+  "rules": {
+    "rooms": {
+      "$room": {
+        ".read": "auth != null && $room.matches(/^(_lobby|[a-z0-9][a-z0-9_-]{0,47})$/)",
+        "$peer": {
+          ".write": "auth != null && $room.matches(/^(_lobby|[a-z0-9][a-z0-9_-]{0,47})$/) && (!data.exists() || data.child('by').val() === auth.uid)",
+          ".validate": "newData.child('by').val() === auth.uid"
+        }
+      }
+    }
+  }
+}
