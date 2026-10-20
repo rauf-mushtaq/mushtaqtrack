@@ -21,7 +21,7 @@ The first time you open the game it asks for your name or nickname. Your times, 
 - **34 official tracks** across Easy, Medium, Hard and Expert, plus a **daily track** and **endless random tracks** from a seed you can share. The generator uses every piece type.
 - **Medals** (Bronze, Silver, Gold, Author), and a **ghost of your best run** with live split deltas.
 - **Track editor** with 17 piece types, height levels, an environment picker, undo, a route check, and `MT1.` share codes.
-- Red/white barriers on every edge (you can clear them when airborne), skid marks, tyre smoke, engine sound, three cameras (the chase camera rolls with the car through loops), a minimap, and keyboard, gamepad and large touch controls.
+- Red/white barriers on every edge (you can clear them when airborne), skid marks, tyre smoke, engine sound, three cameras (the chase camera rolls with the car through loops), a minimap, and keyboard, gamepad and large touch controls. On tablets and phones the 3D view is drawn at a lower resolution (with smaller shadows) so it runs smoothly; the menus and text stay sharp.
 - An autopilot drives the menu background. It was used to test all 14 cars on all 34 official tracks, and to set the medal times.
 
 ## Online features
