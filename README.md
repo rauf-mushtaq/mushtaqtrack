@@ -23,7 +23,7 @@ The first time you open the game it asks for your name or nickname. Your times, 
 - **Sky tracks**: rows of boost pads, a climb up steep ramps, and a big jump onto a platform in the air with the finish on it.
 - **Stunt tracks**: 25 tracks packed with loops, massive loops, kicker jumps, steep-ramp launches, wall rides, banked turns, tunnels and chicanes, from Loop Street up to Grand Finale.
 - **Steep ramps** climb two levels in one piece and shape themselves to what joins them: from flat road one curves up smoothly, steep ramps in a row make one long climb, and a steep ramp with nothing after it launches you into the air.
-- **Track editor** with 20 piece types, height levels, an environment picker, undo, a route check, and `MT1.` share codes.
+- **Track editor** with 20 piece types, height levels, an environment picker, undo, a route check, and `MT1.` share codes. On a tablet or phone, tap to place a piece, drag with one finger to move around, and pinch with two fingers to zoom.
 - Red/white barriers on every edge (you can clear them when airborne), skid marks, tyre smoke, engine sound, three cameras (the chase camera rolls with the car through loops), a minimap, and keyboard, gamepad and large touch controls. On tablets and phones the 3D view is drawn at a lower resolution (with smaller shadows) so it runs smoothly; the menus and text stay sharp.
 - An autopilot drives the menu background. It was used to test all 14 cars on all 63 official tracks, and to set the medal times.
 
