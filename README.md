@@ -18,14 +18,15 @@ The first time you open the game it asks for your name or nickname. Your times, 
 - **Track pieces**: road, tight, wide and **banked** turns, **wall rides**, **loops** and **massive loops** (35 m tall; both exit a lane left or right), ramps, **long slopes** and **steep ramps**, kickers, boost pads, **pillars** and **chicane blocks**, **tunnels**, checkpoints, and arrow signs on tight turns.
 - **Environments**: Summer, Winter (snowy pines) and Desert (cacti and mesas), combined with time of day.
 - **14 cars** in the garage, each with its own model and handling: an open-wheel formula car, an Italian-style supercar, a rear-engine German-style GT, a Le Mans-style prototype, a hypercar, an electric hypercar, a stock car, a muscle car, a drift coupé, a rally hatch, an off-road pickup, a classic roadster and a go-kart. You can repaint any of them. The names are made up and there are no real brand logos.
-- **63 official tracks** across Easy, Medium, Hard, Expert, **Sky** and **Stunt**, plus a **daily track** and **endless random tracks** from a seed you can share. The generator uses every piece type.
+- **83 official tracks** across Easy, Medium, Hard, Expert, **Sky**, **Stunt** and **Circuit**, plus a **daily track** and **endless random tracks** from a seed you can share. The generator uses every piece type.
 - **Medals** (Bronze, Silver, Gold, Author), and a **ghost of your best run** with live split deltas.
 - **Sky tracks**: rows of boost pads, a climb up steep ramps, and a big jump onto a platform in the air with the finish on it.
 - **Stunt tracks**: 25 tracks packed with loops, massive loops, kicker jumps, steep-ramp launches, wall rides, banked turns, tunnels and chicanes, from Loop Street up to Grand Finale.
+- **Circuit tracks**: 20 closed laps in the style of Grand Prix circuits, with the finish line just behind the start: long straights with boost pads, heavy-braking hairpins, chicanes, esses, fast sweepers, banked corners, hills, a figure-eight with a bridge and a banked oval. The names are made up.
 - **Steep ramps** climb two levels in one piece and shape themselves to what joins them: from flat road one curves up smoothly, steep ramps in a row make one long climb, and a steep ramp with nothing after it launches you into the air.
 - **Track editor** with 20 piece types, height levels, an environment picker, undo, a route check, and `MT1.` share codes. On a tablet or phone, tap to place a piece, drag with one finger to move around, and pinch with two fingers to zoom.
 - Red/white barriers on every edge (you can clear them when airborne), skid marks, tyre smoke, engine sound, three cameras (the chase camera rolls with the car through loops), a minimap, and keyboard, gamepad and large touch controls. On tablets and phones the 3D view is drawn at a lower resolution (with smaller shadows) so it runs smoothly; the menus and text stay sharp.
-- An autopilot drives the menu background. It was used to test all 14 cars on all 63 official tracks, and to set the medal times.
+- An autopilot drives the menu background. It was used to test all 14 cars on all 83 official tracks, and to set the medal times.
 
 ## Online features
 
