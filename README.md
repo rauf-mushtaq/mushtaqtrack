@@ -36,7 +36,7 @@ The online parts need somewhere to keep shared data and to connect players. This
 
 The game was written to run as a Claude artifact too, where the artifact runtime provides the same things; `online.js` provides them from Firebase instead, so `index.html` is the same game either way.
 
-- **Your name** is what other players see on leaderboards, community tracks, ghosts, live races and chat. Change it any time with Change on the menu or in Settings.
+- **Your name** is what other players see on leaderboards, community tracks, ghosts, live races and chat. Change it any time with Change on the menu or in Settings. Names with “Rauf” in them are taken, however they're written (any case, accents, spaces or dots between the letters, a 4 for the a, or look-alike letters), except on a device unlocked with the Silver Agent's password; a name like that from anyone else shows as “Player” to everyone.
 - **Community tracks**: press Publish on a track under Yours and everyone who plays the game sees it in the Community tab, with its maker's name. They can race it or copy it into their own editor. You can update or unpublish your own tracks, and the game's owner can remove any track.
 - **Leaderboards**: every player's best time on each track goes on a shared board, showing their name and car. Each track card shows the record and your place, and you can click it to see the full board. A board belongs to the track's layout, so the daily, a random seed, a community track or an imported code all have boards too. The game's owner can remove a time.
 - **Ghosts of the top times**: a time that makes a track's top ten is posted with its ghost. On a leaderboard (or the finish screen), switch on Ghost next to other players' times to race against them, up to five at once.
