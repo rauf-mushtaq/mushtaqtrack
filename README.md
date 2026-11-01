@@ -46,6 +46,7 @@ The online parts need somewhere to keep shared data and to connect players. This
 The game was written to run as a Claude artifact too, where the artifact runtime provides the same things; `online.js` provides them from Firebase instead, so `index.html` is the same game either way.
 
 - **Your name** is what other players see on leaderboards, community tracks, ghosts, live races and chat. Change it any time with Change on the menu or in Settings. Names with “Rauf” in them are the creator's, however they're written (any case, accents, spaces or dots between the letters, a 4 for the a, or look-alike letters): typing one asks for the creator's password, which logs you in as the creator, with the Silver Agent and its theme music. Without the password, pick another name. A name like that from anyone who isn't logged in as the creator shows as “Player” to everyone.
+- **Swear filter**: rude words in chat come out as asterisks (it sees through tricks like sh1t, f u c k and stretched letters, and leaves ordinary words such as "Scunthorpe" or "title" alone). Names with rude words in them aren't accepted, and anyone else's shows as "Player"; track names from other players are filtered the same way.
 - **Community tracks**: press Publish on a track under Yours and everyone who plays the game sees it in the Community tab, with its maker's name. They can race it or copy it into their own editor. You can update or unpublish your own tracks, and the game's owner can remove any track.
 - **Leaderboards**: every player's best time on each track goes on a shared board, showing their name and car. Each track card shows the record and your place, and you can click it to see the full board. A board belongs to the track's layout, so the daily, a random seed, a community track or an imported code all have boards too. The game's owner can remove a time.
 - **Ghosts of the top times**: a time that makes a track's top ten is posted with its ghost. On a leaderboard (or the finish screen), switch on Ghost next to other players' times to race against them, up to five at once.
@@ -72,6 +73,10 @@ Each browser gets its own player id the first time it opens the game, and keeps 
 The free plan comfortably covers a group of friends. Shared lists are read in full when the game opens, so a very busy game (thousands of visits a day) could reach the free plan's daily read limit, and then the shared lists stop loading until the next day.
 
 To try the online features on your own computer without a Firebase project, run `firebase emulators:start --project demo-mushtaqtrack` here (with the [Firebase CLI](https://firebase.google.com/docs/cli)), serve this folder with any local web server, and add `emulators: true` to the settings in `online-config.js`.
+
+## CrazyGames
+
+`tools/build_crazygames.py` builds the zip to upload to CrazyGames: `python3 tools/build_crazygames.py mushtaqtrack-crazygames.zip` from this folder. It puts three.js and Ammo.js in the zip (loaded from it rather than from the CDNs), leaves out the app install parts, keeps the online features (so CrazyGames players share the leaderboards, races and City with this page), and sets `window.MT_PORTAL` so challenges are codes rather than links back here.
 
 ## Controls
 
