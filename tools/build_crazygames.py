@@ -35,11 +35,14 @@ files = {
     'online.js': (root / 'online.js').read_bytes(),
     'online-config.js': (root / 'online-config.js').read_bytes(),
     'agent-theme.mp3': (root / 'agent-theme.mp3').read_bytes(),
+    'music-menu.mp3': (root / 'music-menu.mp3').read_bytes(),
+    'music-race.mp3': (root / 'music-race.mp3').read_bytes(),
     'three.min.js': fetch(THREE),
     'ammo.js': fetch(AMMO),
     'THIRD-PARTY.txt': (
         'three.js r128 (three.min.js): MIT licence, Copyright 2010-2021 three.js authors. https://github.com/mrdoob/three.js\n'
         'Ammo.js (ammo.js, as shipped with three.js 0.110.0): zlib licence, a port of the Bullet physics engine. https://github.com/kripken/ammo.js\n'
+        'Music (music-menu.mp3, music-race.mp3): original, made for the game (tools/music.py).\n'
         'Music (agent-theme.mp3): "Classy and Dangerous (Inspired by 007)" by Luis_Humanoide, from Pixabay, under the Pixabay Content License. https://pixabay.com/service/license-summary/\n'
     ).encode('utf-8'),
 }
